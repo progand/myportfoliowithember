@@ -5,15 +5,21 @@
 <h1>Home Page</h1>
 
 <h2>My Projects</h2>
-<div class="list-group">
-    {{#each model.projects as |project|}}
-        {{#link-to "project" project class='list-group-item'}}
-            <h4 class="list-group-item-heading">{{project.name}}</h4>
-
-            <p class="list-group-item-text">{{project.description}}</p>
+{{#each model.projects as |project|}}
+    <div class="media">
+        {{#link-to "project" project class='media-left'}}
+            <img class="media-object" src="{{project.image}}" alt="{{project.name}}" width="64">
         {{/link-to}}
-    {{/each}}
-</div>
+
+        <div class="media-body">
+            <h4 class="media-heading">{{#link-to "project" project class='media-left'}}{{project.name}}{{/link-to}}</h4>
+            {{project.description}}
+        </div>
+    </div>
+{{/each}}
+
+
+<hr>
 
 <h2>Used Technologies</h2>
 <ul class="list-inline">
