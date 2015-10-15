@@ -1,0 +1,12 @@
+<ol class="breadcrumb">
+    <li>{{#link-to "index"}}Home{{/link-to}}</li>
+    <li class="active">{{model.name}}</li>
+</ol>
+
+<h1>{{model.name}}</h1>
+<a href="{{model.url}}" target="_blank">{{model.url}}</a>
+<p>
+    {{model.description}}
+</p>
+
+{{outlet}}
