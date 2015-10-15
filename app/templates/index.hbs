@@ -2,10 +2,11 @@
     <li class="active">Home</li>
 </ol>
 
-<h1>Home page</h1>
+<h1>Home Page</h1>
 
+<h2>My Projects</h2>
 <div class="list-group">
-    {{#each model as |project|}}
+    {{#each model.projects as |project|}}
         {{#link-to "project" project class='list-group-item'}}
             <h4 class="list-group-item-heading">{{project.name}}</h4>
 
@@ -13,5 +14,14 @@
         {{/link-to}}
     {{/each}}
 </div>
+
+<h2>Used Technologies</h2>
+<ul class="list-inline">
+    {{#each model.technologies as |technology|}}
+        <li>
+            <span class="label label-info">{{technology.name}}</span>
+        </li>
+    {{/each}}
+</ul>
 
 {{outlet}}
