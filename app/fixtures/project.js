@@ -12,7 +12,8 @@ export default [
         technologies: [
             'jQuery',
             'Backbone'
-        ]
+        ],
+        images: ['/img/projects/roomlr/home.png', '/img/projects/roomlr/list.png', '/img/projects/roomlr/apartment.png']
 
     }, {
         id: 'livarava',
@@ -22,6 +23,7 @@ export default [
         image: 'https://www.livarava.com/static/livarava/img/projects/livarava-logo-black-200x200.png',
         technologies: [
             'jQuery'
-        ]
+        ],
+        images: ['/img/projects/livarava/home.png', '/img/projects/livarava/neuron.png', '/img/projects/livarava/feed.png']
     }
 ];

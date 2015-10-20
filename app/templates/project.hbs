@@ -3,13 +3,48 @@
     <li class="active">{{model.name}}</li>
 </ol>
 
-<h1>{{model.name}}</h1>
+<h2>{{model.name}}</h2>
+
 <a href="{{model.url}}" target="_blank">{{model.url}}</a>
-<figure>
-    <img src="{{model.image}}" alt="{{model.name}}"/>
-</figure>
+
 <p>
     {{model.description}}
 </p>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {{#each model.images as |image index|}}
+            <li data-target="#carousel-example-generic" data-slide-to="{{index}}"
+                class="{{unless index 'active'}}"></li>
+        {{/each}}
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        {{#each model.images as |image index|}}
+            <div class="carousel-item {{unless index 'active'}}">
+                <img src="{{image}}" alt="">
+            </div>
+        {{/each}}
+    </div>
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="icon-prev" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="icon-next" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<hr>
+<h3>Used Technologies</h3>
+<ul class="list-inline">
+    {{#each model.technologies as |technology|}}
+        <li>
+            <span class="label label-info">{{technology}}</span>
+        </li>
+    {{/each}}
+</ul>
+
+
 
 {{outlet}}
