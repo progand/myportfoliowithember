@@ -1,8 +1,16 @@
 <ol class="breadcrumb">
-    <li class="active">Home</li>
+    <li>{{#link-to "index"}}Home{{/link-to}}</li>
+    <li class="active">{{model.name}}</li>
 </ol>
 
-<h1>My Portfolio</h1>
+<p>
+    {{#link-to "index" class=""}}&longleftarrow; Back to home page{{/link-to}}
+</p>
+
+
+<h2>{{model.id}}</h2>
+
+<h4 class="text-muted">My projects where {{model.id}} was used</h4>
 
 {{#each model.projects as |project|}}
     <div class="media">
@@ -18,17 +26,5 @@
         </div>
     </div>
 {{/each}}
-
-<hr>
-
-<h2>Used Technologies</h2>
-<ul class="list-inline">
-    {{#each model.technologies as |technology|}}
-        <li>
-            {{#link-to "technology" technology class="label label-success"}}{{technology}}{{/link-to}}
-        </li>
-    {{/each}}
-</ul>
-
 
 {{outlet}}

@@ -1,11 +1,11 @@
 import Ember from 'ember';
-import PROJECTS from '../fixtures/project';
+import FIXTURES from '../fixtures/project';
 
 export default Ember.Route.extend({
     model() {
         return {
-            projects: PROJECTS,
-            technologies: PROJECTS.reduce((techs, project) => {
+            projects: FIXTURES,
+            technologies: FIXTURES.reduce((techs, project) => {
                 if(project.technologies){
                     return techs.concat(project.technologies);
                 }
