@@ -10,8 +10,7 @@ module.exports = function (environment) {
             FEATURES: {
                 // Here you can enable experimental features on an ember canary build
                 // e.g. 'with-controller': true
-                'query-param': true,
-                'ember-routing-will-change-hooks': true
+
             }
         },
 
@@ -21,7 +20,8 @@ module.exports = function (environment) {
         },
         contentSecurityPolicy: {
             'default-src': "'none'",
-            'img-src': "'self' *"
+            'img-src': "'self' *",
+            'style-src': "'self' 'unsafe-inline'",
         }
     };
 
