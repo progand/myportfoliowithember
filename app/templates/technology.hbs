@@ -15,9 +15,7 @@
 {{#each model.projects as |project|}}
     <div class="media">
         {{#link-to "project" project class='media-left'}}
-            <img class="media-object"
-                 src="/img/placeholder-64x64.svg"
-                 alt="{{project.name}}" width="64">
+            <div class="project-list-image media-object" style="background-image: url({{project.image}})"></div>
         {{/link-to}}
 
         <div class="media-body">

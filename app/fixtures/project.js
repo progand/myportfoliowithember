@@ -42,16 +42,16 @@ export default [
         ],
         images: ['/img/projects/livarava/home.png', '/img/projects/livarava/neuron.png', '/img/projects/livarava/feed.png']
     },
-     {
+    {
         id: 'portfolio',
         name: 'The Portfolio',
-        url: '/',
-        description: `My portfolio - you are already here!`,
+        url: window.location.protocol + '//' + window.location.host,
+        description: `My portfolio - you are already here! That's why no images provided.`,
         image: 'https://www.roomlr.com/img/logo_roomlr.svg',
         technologies: [
-            'jQuery',
-            'Backbone',
-            'jQueryUI'
+            'ES6',
+            'Ember',
+            'Bootstrap'
         ],
         images: []
 
