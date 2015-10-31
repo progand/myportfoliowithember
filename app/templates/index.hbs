@@ -2,20 +2,9 @@
     <li class="active">Home</li>
 </ol>
 
-<h1>My Portfolio</h1>
-
-{{#each model.projects as |project|}}
-    <div class="media">
-        {{#link-to "project" project class='media-left'}}
-            <div class="project-list-image media-object" style="background-image: url({{project.image}})"></div>
-        {{/link-to}}
-
-        <div class="media-body">
-            <h4 class="media-heading">{{#link-to "project" project class='media-left'}}{{project.name}}{{/link-to}}</h4>
-            {{project.description}}
-        </div>
-    </div>
-{{/each}}
+{{#project-list projects = model.projects}}
+    <h1>My Portfolio</h1>
+{{/project-list}}
 
 <hr>
 
