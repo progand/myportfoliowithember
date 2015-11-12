@@ -1,5 +1,3 @@
-import Ember from "ember";
-
 export default function () {
     this.transition(
         this.fromRoute('index'),
@@ -16,4 +14,4 @@ export default function () {
         this.toRoute('technology'),
         this.use('toLeft')
     );
-};
+}

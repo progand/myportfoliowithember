@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import FIXTURES from '../fixtures/project';
+import {PROJECTS} from '../fixtures/project';
 
 export default Ember.Route.extend({
     model(params) {

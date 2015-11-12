@@ -48,14 +48,11 @@
 
 {{#if model.technologies }}
     <hr>
-    <h3>Used Technologies</h3>
-    <ul class="list-inline">
-        {{#each model.technologies as |technology|}}
-            <li>
-                {{#link-to "technology" technology class="label label-success"}}{{technology}}{{/link-to}}
-            </li>
-        {{/each}}
-    </ul>
+
+    {{#technology-list projects = model.projects}}
+        <h3>Used Technologies</h3>
+    {{/technology-list}}
+
 {{/if}}
 
 

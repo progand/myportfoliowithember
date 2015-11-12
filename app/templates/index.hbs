@@ -2,20 +2,17 @@
     <li class="active">Home</li>
 </ol>
 
-{{#project-list projects = model.projects}}
-    <h1>My Portfolio</h1>
-{{/project-list}}
-
-<hr>
-
-<h2>Used Technologies</h2>
-<ul class="list-inline">
-    {{#each model.technologies as |technology|}}
-        <li>
-            {{#link-to "technology" technology class="label label-success"}}{{technology}}{{/link-to}}
-        </li>
-    {{/each}}
-</ul>
-
+<section class="container-fluid">
+    <div class="col-sm-8">
+        {{#project-list projects = model.projects}}
+            <h1>My Projects</h1>
+        {{/project-list}}
+    </div>
+    <div class="col-sm-4">
+        {{#technology-list technologies = model.technologies}}
+            <h3>Used Technologies</h3>
+        {{/technology-list}}
+    </div>
+</section>
 
 {{outlet}}

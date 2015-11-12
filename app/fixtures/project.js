@@ -2,7 +2,7 @@
  * Created by user on 10/13/15.
  */
 
-export default [
+export var PROJECTS = [
     {
         id: 'roomlr',
         name: 'Roomlr',
@@ -58,7 +58,7 @@ export default [
     },
     {
         id: 'zbaranskyi',
-        name: `Painter's portfolio - Anatoliy Zbaranskyi`,
+        name: `Painter's Portfolio - Anatoliy Zbaranskyi`,
         url: window.location.protocol + '//' + window.location.host,
         description: `The web-site contains few painter's galleries and some additional information. It's based on pure PHP, no framework were used.`,
         image: 'https://www.roomlr.com/img/logo_roomlr.svg',
@@ -70,3 +70,15 @@ export default [
 
     }
 ];
+
+export var TECHNOLOGIES = PROJECTS.reduce((techs, project) => {
+    if (project.technologies) {
+        project.technologies.forEach(technology => {
+            if (!techs[technology]) {
+                techs[technology] = 0;
+            }
+            techs[technology] += 1;
+        });
+    }
+    return techs;
+}, {});
