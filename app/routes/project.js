@@ -1,8 +1,17 @@
 import Ember from 'ember';
-import {PROJECTS} from '../fixtures/project';
+import {PROJECTS, TECHNOLOGIES} from '../fixtures/project';
 
 export default Ember.Route.extend({
     model(params) {
-        return FIXTURES.find(project => params.project_id === project.id);
+        let project = PROJECTS.find(project => params.project_id === project.id),
+            technologies = project.technologies,
+            parsedTechnologies = {};
+        for (let name in TECHNOLOGIES) {
+            if(technologies.contains(name)){
+                parsedTechnologies[name] = TECHNOLOGIES[name];
+            }
+        }
+        project.technologies = parsedTechnologies;
+        return project;
     }
 });
