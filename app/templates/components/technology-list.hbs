@@ -1,9 +1,11 @@
 {{yield}}
-<div class="list-group">
+<ul class="list-inline">
     {{#each-in technologies as |technology timesUsed|}}
-        {{#link-to "technology" technology class='list-group-item'}}
-            <span class="label label-default label-pill pull-right">{{timesUsed}}</span>
-            {{technology}}
-        {{/link-to}}
+        <li>
+            {{#link-to "technology" technology class=''}}
+                {{technology}}
+                {{number-label timesUsed}}
+            {{/link-to}}
+        </li>
     {{/each-in}}
-</div>
+</ul>

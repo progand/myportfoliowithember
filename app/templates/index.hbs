@@ -2,17 +2,12 @@
     <li class="active">Home</li>
 </ol>
 
-<section class="container-fluid">
-    <div class="col-sm-8">
-        {{#project-list projects = model.projects}}
-            <h1>My Projects</h1>
-        {{/project-list}}
-    </div>
-    <div class="col-sm-4">
-        {{#technology-list technologies = model.technologies}}
-            <h3>Used Technologies</h3>
-        {{/technology-list}}
-    </div>
-</section>
+{{#project-list projects = model.projects}}
+    <h1>My Projects</h1>
+{{/project-list}}
+
+{{#technology-list technologies = model.technologies}}
+    <h3>Used Technologies</h3>
+{{/technology-list}}
 
 {{outlet}}
