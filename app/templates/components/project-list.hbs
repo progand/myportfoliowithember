@@ -3,20 +3,27 @@
 <div class="form-inline text-right">
     <div class="form-group">
         <label>Filter: </label>
-        {{input value=filter class="form-control" id="project-list-filter-input" placeholder="Search..."}}
+      {{input value=filter class="form-control" id="project-list-filter-input" placeholder="Search..."}}
         <!--<input type="text" class="form-control" id="project-list-filter-input" placeholder="Search...">-->
     </div>
 </div>
 
-{{#each visibleProjects as |project|}}
+{{#each visibleProjects as |project index|}}
     <div class="media">
-        {{#link-to "project" project class='media-left'}}
-            <div class="project-list-image media-object" style="background-image: url({{project.image}})"></div>
-        {{/link-to}}
+      {{#link-to "project" project class='media-left'}}
+          <div class="project-list-image media-object project-list__media-image--{{index}}"></div>
+      {{/link-to}}
 
         <div class="media-body">
             <h4 class="media-heading">{{#link-to "project" project class='media-left'}}{{project.name}}{{/link-to}}</h4>
-            {{project.description}}
+          {{project.description}}
         </div>
     </div>
 {{/each}}
+<style>
+    {{#each visibleProjects as |project index|}}
+      .project-list__media-image--{{index}}{
+          background-image: url({{project.image}})
+      }
+    {{/each}}
+</style>
