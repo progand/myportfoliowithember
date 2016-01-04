@@ -1,10 +1,10 @@
 {{yield}}
 <ul class="list-inline">
-    {{#each-in technologies as |technology timesUsed|}}
+    {{#each-in technologies as |index technology|}}
         <li>
             {{#link-to "technology" technology class=''}}
-                {{technology}}
-                {{number-label timesUsed}}
+                {{technology.name}}
+                {{number-label technology.used}}
             {{/link-to}}
         </li>
     {{/each-in}}

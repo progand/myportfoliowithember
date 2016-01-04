@@ -2,7 +2,7 @@
  * Created by user on 10/13/15.
  */
 
-export var PROJECTS = [
+var RAW_PROJECT_DATA = [
   {
     id: 'roomlr',
     name: 'Roomlr',
@@ -83,14 +83,33 @@ export var PROJECTS = [
   }
 ];
 
-export var TECHNOLOGIES = PROJECTS.reduce((techs, project) => {
+
+var RAW_TECHNOLOGIES_DATA = _.chain(RAW_PROJECT_DATA).reduce((techs, project) => {
   if (project.technologies) {
     project.technologies.forEach(technology => {
       if (!techs[technology]) {
-        techs[technology] = 0;
+        techs[technology] = {id: String(technology).toLowerCase(), name: technology, used: 0};
       }
-      techs[technology] += 1;
+      techs[technology]['used'] += 1;
     });
   }
   return techs;
-}, {});
+}, {})/*.sortBy(technology => -1 * technology.used)*/.value();
+
+export var TECHNOLOGIES = _.chain(RAW_TECHNOLOGIES_DATA)
+  .sortBy(technology => -1 * technology.used)
+  .each(technology => {
+    technology.projects = RAW_PROJECT_DATA.filter((project) => {
+      if (project.technologies) {
+        return project.technologies.contains(technology.name);
+      }
+    });
+  })
+  .value();
+
+export var PROJECTS = RAW_PROJECT_DATA.map(function (project) {
+  project.technologies = project.technologies.map(technology => {
+    return {name: technology, used: RAW_TECHNOLOGIES_DATA[technology]['used']};
+  });
+  return project;
+});
