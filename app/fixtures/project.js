@@ -34,7 +34,7 @@ var RAW_PROJECT_DATA = [
     id: 'prostir',
     name: 'Портал “Громадський простір” ',
     url: 'http://www.prostir.ua/',
-    description: `Портал “Громадський простір” пропонує широкий спектр інтерактивних сервісів для підвищення ефективності роботи неурядових організацій України та сприяє активній співпраці в третьому секторі, міжсекторній взаємодії НУО (медіа, органи влади, соціально відповідальний бізнес) – на регіональному та національному рівнях.`,
+    description: `Projects of IAC "Civic Space" are reliable information channels for Ukrainian stakeholders. Among the recipients of our information are known institutions: Governments, Delegation of the European Union to Ukraine, UNDP in Ukraine, foreign embassies, local governments, Ministries and departments, key media of the country. Among the active projects of the Center are: - Portal "Civic Space"`,
     image: '/img/projects/prostir/prostir.jpg',
     technologies: [
       'jQuery',
