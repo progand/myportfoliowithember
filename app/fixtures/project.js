@@ -109,7 +109,7 @@ var TECHNOLOGIES = _.chain(RAW_TECHNOLOGIES_DATA)
 
 var PROJECTS = RAW_PROJECT_DATA.map(function (project) {
   project.technologies = project.technologies.map(technology => {
-    return {name: technology, used: RAW_TECHNOLOGIES_DATA[technology]['used']};
+    return _.findWhere(TECHNOLOGIES, {name: technology});
   });
   return project;
 });
