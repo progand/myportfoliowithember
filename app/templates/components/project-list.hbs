@@ -1,6 +1,6 @@
 {{yield}}
 
-<div class="form-inline text-right">
+<div class="form-inline text-right-sm">
     <div class="form-group">
         <label>Filter: </label>
       {{input value=filter class="form-control"  placeholder="Search..."}}
@@ -22,8 +22,8 @@
 {{/each}}
 <style>
     {{#each visibleProjects as |project index|}}
-      .project-list__media-image--{{index}}{
-          background-image: url({{project.image}})
-      }
+    .project-list__media-image--{{index}}{
+        background-image: url({{project.image}})
+    }
     {{/each}}
 </style>

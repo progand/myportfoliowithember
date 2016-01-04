@@ -23,3 +23,9 @@ $project-list-thumbnail-size: 125px;
 #bx-pager img{
   max-width: 64px;
 }
+
+@media (min-width: 34em){
+  .text-right-sm{
+    text-align: right;
+  }
+}
