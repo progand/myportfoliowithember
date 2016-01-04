@@ -11,3 +11,15 @@ $project-list-thumbnail-size: 72px;
 .project-slider-image {
   width: 100%;
 }
+
+.bx-prev,
+.bx-next{
+  background-image: url(/img/bxslider/controls.png);
+}
+.bx-next{
+  background-position: -44px -33px;
+}
+
+#bx-pager img{
+  max-width: 64px;
+}

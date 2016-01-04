@@ -12,7 +12,7 @@
     "loader.js": "ember-cli/loader.js#3.2.1",
     "qunit": "~1.18.0",
     "bootstrap": "4.0.0-alpha",
-    "bxslider": "*",
-    "lodash": "*"
+    "lodash": "*",
+    "bootstrap-carousel-swipe": "*"
   }
 }

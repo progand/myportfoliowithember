@@ -52,7 +52,7 @@ var RAW_PROJECT_DATA = [
       'Wordpress',
       'Bootstrap'
     ],
-    images: []
+    images: ['/img/projects/mezhynska/home.jpg','/img/projects/mezhynska/photo.jpg','/img/projects/mezhynska/albums.jpg','/img/projects/mezhynska/video.jpg','/img/projects/mezhynska/contacts.jpg']
 
   }, {
     id: 'portfolio',

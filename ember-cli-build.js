@@ -20,10 +20,9 @@ module.exports = function (defaults) {
     // along with the exports of each module as its value.
 
     app.import('bower_components/bootstrap/dist/css/bootstrap.css');
-    app.import('bower_components/bxslider/bx_styles/bx_styles.css');
     app.import('bower_components/bootstrap/dist/js/bootstrap.js');
     app.import('bower_components/lodash/lodash.min.js');
-    app.import('bower_components/bxslider/jquery.bxSlider.min.js');
+    app.import('bower_components/bootstrap-carousel-swipe/carousel-swipe.js');
 
     return app.toTree();
 };
