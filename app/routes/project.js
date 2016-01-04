@@ -3,6 +3,6 @@ import {PROJECTS} from '../fixtures/project';
 
 export default Ember.Route.extend({
     model(params) {
-        return PROJECTS.find(project => params.project_id === project.id);
+        return _.findWhere(PROJECTS, {id: params.project_id});
     }
 });

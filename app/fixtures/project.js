@@ -96,7 +96,7 @@ var RAW_TECHNOLOGIES_DATA = _.chain(RAW_PROJECT_DATA).reduce((techs, project) =>
   return techs;
 }, {})/*.sortBy(technology => -1 * technology.used)*/.value();
 
-export var TECHNOLOGIES = _.chain(RAW_TECHNOLOGIES_DATA)
+var TECHNOLOGIES = _.chain(RAW_TECHNOLOGIES_DATA)
   .sortBy(technology => -1 * technology.used)
   .each(technology => {
     technology.projects = RAW_PROJECT_DATA.filter((project) => {
@@ -107,9 +107,11 @@ export var TECHNOLOGIES = _.chain(RAW_TECHNOLOGIES_DATA)
   })
   .value();
 
-export var PROJECTS = RAW_PROJECT_DATA.map(function (project) {
+var PROJECTS = RAW_PROJECT_DATA.map(function (project) {
   project.technologies = project.technologies.map(technology => {
     return {name: technology, used: RAW_TECHNOLOGIES_DATA[technology]['used']};
   });
   return project;
 });
+
+export {PROJECTS, TECHNOLOGIES};
