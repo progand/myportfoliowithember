@@ -1,13 +1,4 @@
-<ol class="breadcrumb">
-    <li>{{#link-to "index"}}Home{{/link-to}}</li>
-    <li class="active">{{model.id}}</li>
-</ol>
-
-<p>
-    {{#link-to "index" class=""}}&longleftarrow; Back to home page{{/link-to}}
-</p>
-
-<h2>{{model.name}}</h2>
+{{item-header model=model}}
 
 {{#project-list projects = model.projects}}
     <h4 class="text-muted">My projects where {{model.id}} was used</h4>
