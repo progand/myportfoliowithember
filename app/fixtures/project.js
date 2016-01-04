@@ -12,7 +12,9 @@ var RAW_PROJECT_DATA = [
     technologies: [
       'jQuery',
       'Backbone',
-      'jQueryUI'
+      'jQueryUI',
+      'Bootstrap',
+      'Google Maps API'
     ],
     images: ['/img/projects/roomlr/home.jpg', '/img/projects/roomlr/list.jpg', '/img/projects/roomlr/apartment.jpg']
 
