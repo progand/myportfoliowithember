@@ -23,7 +23,6 @@ module.exports = function(defaults) {
     app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
     app.import('bower_components/bootstrap/js/dist/util.js');
     app.import('bower_components/bootstrap/js/dist/carousel.js');
-    app.import('bower_components/lodash/dist/lodash.core.min.js');
     app.import('bower_components/bootstrap-carousel-swipe/carousel-swipe.js');
 
     return app.toTree();

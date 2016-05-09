@@ -1,6 +1,7 @@
 /**
  * Created by user on 10/13/15.
  */
+ import _ from 'lodash'; 
 
 var RAW_PROJECT_DATA = [
   {
