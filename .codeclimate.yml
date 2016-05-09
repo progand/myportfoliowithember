@@ -1,0 +1,23 @@
+engines:
+  watson:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - app/**/*
+  - config/**
+  - ember-cli-build.js
+exclude_paths:
+- tmp/**/*
+- dist/**/*
+- node_modules/**/*
+- bower_components/**/*
+- "**/vendor/**/*"
