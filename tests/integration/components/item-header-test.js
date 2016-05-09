@@ -13,7 +13,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{item-header}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.ok(this.$('a').length);
 
   // Template block usage:
   this.render(hbs`
@@ -22,5 +22,5 @@ test('it renders', function(assert) {
     {{/item-header}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.notEqual(this.$().text().indexOf('template block text'), -1);
 });

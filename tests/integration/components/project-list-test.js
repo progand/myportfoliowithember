@@ -13,7 +13,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{project-list}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$('input').length, 1);
 
   // Template block usage:
   this.render(hbs`
@@ -22,5 +22,5 @@ test('it renders', function(assert) {
     {{/project-list}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.notEqual(this.$().text().indexOf('template block text'), -1);
 });
