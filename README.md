@@ -1,9 +1,5 @@
 [![Build Status](https://travis-ci.org/progand/myportfoliowithember.svg?branch=master)](https://travis-ci.org/progand/myportfoliowithember)
 
-[![Code Climate](https://codeclimate.com/github/progand/myportfoliowithember/badges/gpa.svg)](https://codeclimate.com/github/progand/myportfoliowithember)
-
-[![Issue Count](https://codeclimate.com/github/progand/myportfoliowithember/badges/issue_count.svg)](https://codeclimate.com/github/progand/myportfoliowithember)
-
 # Myportfoliowithember
 
 This README outlines the details of collaborating on this Ember application.
