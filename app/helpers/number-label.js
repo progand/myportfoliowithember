@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { helper as buildHelper } from '@ember/component/helper';
+import { htmlSafe } from '@ember/template';
 
 export function numberLabel(params/*, hash*/) {
     let number = params[0],
@@ -23,7 +24,7 @@ export function numberLabel(params/*, hash*/) {
             labelType = 'default';
     }
 
-    return Ember.String.htmlSafe(`<span class="label label-${labelType}">${number}</span>`);
+    return htmlSafe(`<span class="label label-${labelType}">${number}</span>`);
 }
 
-export default Ember.Helper.helper(numberLabel);
+export default buildHelper(numberLabel);

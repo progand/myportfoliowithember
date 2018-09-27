@@ -1,11 +1,11 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   didInsertElement() {
     var slider = this.$('#image-slider').carousel();
     this.set('slider', slider);
   },
   willDestroyElement() {
-    this.get('slider').off();
+    this.slider.off();
   }
 });

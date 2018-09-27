@@ -1,26 +1,28 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, findAll, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('project-list', 'Integration | Component | project list', {
-  integration: true
-});
+module('Integration | Component | project list', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  assert.expect(2);
+  test('it renders', async function(assert) {
+    assert.expect(2);
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{project-list}}`);
+    await render(hbs`{{project-list}}`);
 
-  assert.equal(this.$('input').length, 1);
+    assert.dom('input').exists({ count: 1 });
 
-  // Template block usage:
-  this.render(hbs`
-    {{#project-list}}
-      template block text
-    {{/project-list}}
-  `);
+    // Template block usage:
+    await render(hbs`
+      {{#project-list}}
+        template block text
+      {{/project-list}}
+    `);
 
-  assert.notEqual(this.$().text().indexOf('template block text'), -1);
+    assert.notEqual(find('*').textContent.indexOf('template block text'), -1);
+  });
 });

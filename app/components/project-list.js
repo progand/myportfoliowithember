@@ -1,10 +1,11 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   filter: "",
-  visibleProjects: Ember.computed('filter', 'projects', function () {
-    return (this.get('projects')) ? this.get('projects').filter(project => {
-      return project.name.toLowerCase().indexOf(this.get('filter').toLowerCase()) !== -1;
+  visibleProjects: computed('filter', 'projects', function () {
+    return (this.projects) ? this.projects.filter(project => {
+      return project.name.toLowerCase().indexOf(this.filter.toLowerCase()) !== -1;
     }) : [];
   })
 });
