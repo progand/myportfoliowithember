@@ -6,16 +6,15 @@
     {{model.description}}
 </p>
 
-{{image-slider images=model.images}}
-
-{{#if model.technologies }}
-    <hr>
-
-    {{#technology-list technologies = model.technologies}}
-        <h3>Used Technologies</h3>
-    {{/technology-list}}
-
+{{#if model.images.length}}
+    {{#bs-carousel
+    model=this as |carousel|}}
+    {{#each model.images as |image|}}
+        {{#carousel.slide}}
+        <img alt="{{model.name}}" src='{{image}}' class="img-responsive project-slider-image">
+        {{/carousel.slide}}
+    {{/each}}
+    {{/bs-carousel}}
 {{/if}}
-
 
 {{outlet}}

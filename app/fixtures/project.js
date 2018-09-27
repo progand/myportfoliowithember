@@ -1,9 +1,8 @@
 /**
  * Created by user on 10/13/15.
  */
- import _ from 'lodash'; 
 
-var RAW_PROJECT_DATA = [
+var PROJECTS = [
   {
     id: 'roomlr',
     name: 'Roomlr',
@@ -55,7 +54,7 @@ var RAW_PROJECT_DATA = [
       'Wordpress',
       'Bootstrap'
     ],
-    images: ['/img/projects/mezhynska/home.jpg','/img/projects/mezhynska/photo.jpg','/img/projects/mezhynska/albums.jpg','/img/projects/mezhynska/video.jpg','/img/projects/mezhynska/contacts.jpg']
+    images: ['/img/projects/mezhynska/home.jpg', '/img/projects/mezhynska/photo.jpg', '/img/projects/mezhynska/albums.jpg', '/img/projects/mezhynska/video.jpg', '/img/projects/mezhynska/contacts.jpg']
 
   }, {
     id: 'portfolio',
@@ -86,35 +85,4 @@ var RAW_PROJECT_DATA = [
   }
 ];
 
-
-var RAW_TECHNOLOGIES_DATA = _.chain(RAW_PROJECT_DATA).reduce((techs, project) => {
-  if (project.technologies) {
-    project.technologies.forEach(technology => {
-      if (!techs[technology]) {
-        techs[technology] = {id: String(technology).toLowerCase(), name: technology, used: 0};
-      }
-      techs[technology]['used'] += 1;
-    });
-  }
-  return techs;
-}, {})/*.sortBy(technology => -1 * technology.used)*/.value();
-
-var TECHNOLOGIES = _.chain(RAW_TECHNOLOGIES_DATA)
-  .sortBy(technology => -1 * technology.used)
-  .each(technology => {
-    technology.projects = RAW_PROJECT_DATA.filter((project) => {
-      if (project.technologies) {
-        return project.technologies.contains(technology.name);
-      }
-    });
-  })
-  .value();
-
-var PROJECTS = RAW_PROJECT_DATA.map(function (project) {
-  project.technologies = project.technologies.map(technology => {
-    return _.find(TECHNOLOGIES, item => item.name === technology);
-  });
-  return project;
-});
-
-export {PROJECTS, TECHNOLOGIES};
+export { PROJECTS };

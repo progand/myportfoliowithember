@@ -1,0 +1,32 @@
+$project-list-thumbnail-size: 125px;
+
+.project-list-image {
+  width: $project-list-thumbnail-size;
+  height: $project-list-thumbnail-size;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.project-slider-image,
+.width-100-percents {
+  width: 100%;
+}
+
+.bx-prev,
+.bx-next {
+  background-image: url(/img/bxslider/controls.png);
+}
+.bx-next {
+  background-position: -44px -33px;
+}
+
+#bx-pager img {
+  max-width: 64px;
+}
+
+@media (min-width: 34em) {
+  .text-right-sm {
+    text-align: right;
+  }
+}

@@ -8,7 +8,6 @@ const Router = EmberRouter.extend({
 
 Router.map(function () {
   this.route('project', {path: '/:project_id'});
-  this.route('technology', {path: '/technology/:technology_id'});
 });
 
 export default Router;
