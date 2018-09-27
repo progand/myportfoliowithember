@@ -1,4 +1,12 @@
-{{item-header model=model}}
+
+<p class="lead">{{#link-to "index" class=""}}Back to home page{{/link-to}}</p>
+<h2>{{model.name}}</h2>
+
+<div class="my-3">
+{{#each model.technologies as |technology|}}
+    <span class="badge badge-pill badge-info mb-1">{{technology}}</span>
+{{/each}}
+</div>
 
 <a href="{{model.url}}" target="_blank">{{model.url}}</a>
 

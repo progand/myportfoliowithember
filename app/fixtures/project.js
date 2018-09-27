@@ -34,7 +34,7 @@ var PROJECTS = [
     images: ['/img/projects/livarava/home.jpg', '/img/projects/livarava/neuron.jpg', '/img/projects/livarava/feed.jpg']
   }, {
     id: 'prostir',
-    name: 'Портал “Громадський простір” ',
+    name: 'Civic Space',
     url: 'http://www.prostir.ua/',
     description: `Projects of IAC "Civic Space" are reliable information channels for Ukrainian stakeholders. Among the recipients of our information are known institutions: Governments, Delegation of the European Union to Ukraine, UNDP in Ukraine, foreign embassies, local governments, Ministries and departments, key media of the country. Among the active projects of the Center are: - Portal "Civic Space"`,
     image: '/img/projects/prostir/prostir.jpg',
