@@ -1,9 +1,15 @@
-<ol class="breadcrumb">
-    <li class="active">Home</li>
-</ol>
+<div class="jumbotron">
+    <h1 class="display-3">Welcome to my portfolio</h1>
+    <p class="lead">Here you can check out some of my projects</p>
+    <hr class="my-4">
+    <p>Click on any project to see its details</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">About me</a>
+    </p>
+</div>
 
 {{#project-list projects = model.projects}}
-    <h1>My Projects</h1>
+<h1>My projects</h1>
 {{/project-list}}
 
 {{outlet}}
