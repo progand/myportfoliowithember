@@ -56,19 +56,6 @@ var PROJECTS = [
     ],
     images: ['/img/projects/mezhynska/home.jpg', '/img/projects/mezhynska/photo.jpg', '/img/projects/mezhynska/albums.jpg', '/img/projects/mezhynska/video.jpg', '/img/projects/mezhynska/contacts.jpg']
 
-  }, {
-    id: 'portfolio',
-    name: 'My Portfolio',
-    url: window.location.protocol + '//' + window.location.host,
-    description: `My portfolio - you are already here! That's why no images provided.`,
-    image: '/img/projects/roomlr/roomlr.jpg',
-    technologies: [
-      'ES6',
-      'Ember',
-      'Bootstrap'
-    ],
-    images: []
-
   },
   {
     id: 'zbaranskyi',
