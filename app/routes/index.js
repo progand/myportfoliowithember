@@ -1,11 +1,10 @@
 import Route from '@ember/routing/route';
-import { PROJECTS, TECHNOLOGIES } from '../fixtures/project';
+import ENV from '../config/environment';
 
 export default Route.extend({
     model() {
         return {
-            projects: PROJECTS,
-            technologies: TECHNOLOGIES
+            projects: ENV.APP.PROJECTS
         };
     }
 });

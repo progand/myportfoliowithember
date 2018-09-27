@@ -60,7 +60,7 @@ var PROJECTS = [
   {
     id: 'zbaranskyi',
     name: `Anatoliy Zbaranskyi – official site`,
-    url: window.location.protocol + '//' + window.location.host,
+    url: 'http://zbar.ho.ua/',
     description: `The web-site contains few painter's galleries and some additional information. It's based on pure PHP, no framework were used.`,
     image: '/img/projects/roomlr/roomlr.jpg',
     technologies: [
@@ -72,4 +72,4 @@ var PROJECTS = [
   }
 ];
 
-export { PROJECTS };
+module.exports = PROJECTS;

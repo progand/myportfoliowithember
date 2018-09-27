@@ -1,14 +1,18 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const ENV = require('./config/environment')(EmberApp.env());
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     'ember-bootstrap': {
       'bootstrapVersion': 4,
       'importBootstrapFont': false,
       'importBootstrapCSS': false,
       'whitelist': ['bs-carousel']
+    },
+    prember: {
+      urls: ['/'].concat(ENV.APP.PROJECTS.map(i => `/${i.id}`))
     }
   });
 
@@ -25,5 +29,5 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-    return app.toTree();
+  return app.toTree();
 };
