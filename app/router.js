@@ -8,6 +8,9 @@ const Router = EmberRouter.extend({
 
 Router.map(function () {
   this.route('project', {path: '/:project_id'});
+
+  // must be the last one
+  this.route('404', { path: '/*path' });
 });
 
 export default Router;
