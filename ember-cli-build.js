@@ -1,7 +1,6 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-const ENV = require('./config/environment')(EmberApp.env());
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
@@ -12,7 +11,7 @@ module.exports = function (defaults) {
       'whitelist': ['bs-carousel']
     },
     prember: {
-      urls: ['/'].concat(ENV.APP.PROJECTS.map(i => `/${i.id}`))
+      urls: ['/', '/roomlr', '/livarava', '/prostir', '/mezhynska', '/zbaranskyi']
     }
   });
 

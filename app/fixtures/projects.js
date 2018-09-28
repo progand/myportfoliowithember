@@ -72,4 +72,4 @@ var PROJECTS = [
   }
 ];
 
-module.exports = PROJECTS;
+export default PROJECTS;
