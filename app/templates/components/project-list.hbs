@@ -1,32 +1,45 @@
 {{yield}}
-
 <div class="form-inline text-right-sm my-3">
   <div class="form-group">
-    <label for="search" class="mr-2">Filter: </label>
-    {{input value=filter class="form-control form-control-lg" id="search" placeholder="Search..."}}
-    <!--<input type="text" class="form-control" id="project-list-filter-input" placeholder="Search...">-->
+    <label for="search" class="mr-2">
+      Filter:
+    </label>
+    {{input
+      value=filter
+      class="form-control form-control-lg"
+      id="search"
+      placeholder="Search..."
+    }}
   </div>
 </div>
-
 <div class="card-columns my-4">
+  {{#each visibleProjects as |project|}}
+    <div class="card">
+      {{#link-to "project" project}}
+        <img
+          class="card-img-top img-fluid width-100-percents"
+          alt={{project.name}}
+          src={{project.image}}
+         />
 
-  {{#each visibleProjects as |project index|}}
-
-  <div class="card">
-    {{#link-to "project" project}}
-    <img class="card-img-top img-fluid width-100-percents" alt="{{project.name}}" src="{{project.image}}">
-    {{/link-to}}
-    <div class="card-body">
-      {{#link-to "project" project.id class="card-link"}}<h4 class="card-title">{{project.name}}</h4>{{/link-to}}
-      <p class="card-text">{{project.description}}</p>
-      <div>
-        {{#each project.technologies as |technology|}}
-        <span class="badge badge-pill badge-info mb-1">{{technology}}</span>
-        {{/each}}
+      {{/link-to}}
+      <div class="card-body">
+        {{#link-to "project" project.id class="card-link"}}
+          <h4 class="card-title">
+            {{project.name}}
+          </h4>
+        {{/link-to}}
+        <p class="card-text">
+          {{project.description}}
+        </p>
+        <div>
+          {{#each project.technologies as |technology|}}
+            <span class="badge badge-pill badge-info mb-1">
+              {{technology}}
+            </span>
+          {{/each}}
+        </div>
       </div>
     </div>
-  </div>
-
   {{/each}}
-
 </div>

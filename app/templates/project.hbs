@@ -1,28 +1,35 @@
-
-<p class="lead">{{#link-to "index" class=""}}Back to home page{{/link-to}}</p>
-<h2>{{model.name}}</h2>
-
-<div class="my-3">
-{{#each model.technologies as |technology|}}
-    <span class="badge badge-pill badge-info mb-1">{{technology}}</span>
-{{/each}}
-</div>
-
-<a href="{{model.url}}" target="_blank">{{model.url}}</a>
-
-<p>
-    {{model.description}}
+<p class="lead">
+  {{#link-to "index" class=""}}
+    Back to home page
+  {{/link-to}}
 </p>
-
+<h2>
+  {{model.name}}
+</h2>
+<div class="my-3">
+  {{#each model.technologies as |technology|}}
+    <span class="badge badge-pill badge-info mb-1">
+      {{technology}}
+    </span>
+  {{/each}}
+</div>
+<a href={{model.url}} target="_blank" rel="noopener">
+  {{model.url}}
+</a>
+<p>
+  {{model.description}}
+</p>
 {{#if model.images.length}}
-    {{#bs-carousel
-    model=this as |carousel|}}
+  {{#bs-carousel model=this as |carousel|}}
     {{#each model.images as |image|}}
-        {{#carousel.slide}}
-        <img alt="{{model.name}}" src='{{image}}' class="img-responsive project-slider-image">
+      {{#carousel.slide}}
+        <img
+          alt={{model.name}}
+          src={{image}}
+          class="img-responsive project-slider-image"
+         />
         {{/carousel.slide}}
     {{/each}}
-    {{/bs-carousel}}
+  {{/bs-carousel}}
 {{/if}}
-
 {{outlet}}

@@ -1,15 +1,23 @@
 <div class="jumbotron">
-    <h1 class="display-3">Andriy Lach</h1>
-    <p class="lead">Frontend developer</p>
-    <hr class="my-4">
-    <p>I'm not a designer so forgive me this portfolio's look)</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#footer" role="button">Contacts</a>
-    </p>
+  <h1 class="display-3">
+    Andriy Lach
+  </h1>
+  <p class="lead">
+    Frontend developer
+  </p>
+  <hr class="my-4" />
+  <p>
+    I'm not a designer so forgive me this portfolio's look)
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#footer" role="button">
+      Contacts
+    </a>
+  </p>
 </div>
-
-{{#project-list projects = model.projects}}
-<h1>My projects</h1>
+{{#project-list projects=model.projects}}
+  <h1>
+    My projects
+  </h1>
 {{/project-list}}
-
 {{outlet}}
