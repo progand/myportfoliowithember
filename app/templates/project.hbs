@@ -20,16 +20,21 @@
   {{model.description}}
 </p>
 {{#if model.images.length}}
-  {{#bs-carousel model=this as |carousel|}}
-    {{#each model.images as |image|}}
-      {{#carousel.slide}}
-        <img
-          alt={{model.name}}
-          src={{image}}
-          class="img-responsive project-slider-image"
-         />
-        {{/carousel.slide}}
-    {{/each}}
-  {{/bs-carousel}}
+  <div class="my-4">
+    <div class="row">
+      {{#each model.images as |image|}}
+        <div class="col-md-6 px-3 py-3">
+          <div class="ma-4">
+            <img
+              class="img-thumbnail img-fluid"
+              alt={{model.name}}
+              src={{image}}
+             />
+
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
 {{/if}}
 {{outlet}}
